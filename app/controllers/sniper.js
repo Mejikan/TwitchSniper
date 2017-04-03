@@ -8,11 +8,25 @@ export default Controller.extend({
   type: 'streams',
   limit: 10,
   offset: 0,
+  resultsPerPageInput: 10,
   currentPage: computed ('limit', 'offset', function() {
       let limit = get(this, 'limit');
       let offset = get(this, 'offset');
       return Math.floor(offset/limit) + 1;
     }),
+  setNewLimit: function() {
+    let resultsPerPageInput = get(this, 'resultsPerPageInput');
+    if (resultsPerPageInput !== undefined && resultsPerPageInput != null && resultsPerPageInput != ''){
+      resultsPerPageInput = Number(resultsPerPageInput);
+      if (Number.isInteger(resultsPerPageInput) && resultsPerPageInput > 0 && resultsPerPageInput <= 100){
+        set(this, 'limit', resultsPerPageInput);
+        set(this, 'offset', 0);
+      } else {
+        set(this, 'limit', 10);
+        set(this, 'offset', 0);
+      }
+    }
+  }.observes("resultsPerPageInput"),
 
   actions: {
     searchStreams() {
@@ -22,6 +36,8 @@ export default Controller.extend({
         set(this, 'query', searchInput);
         set(this, 'type', 'streams');
         set(this, 'offset', 0);
+      } else {
+        alert('Please give me something to search for!');
       }
     },
 
@@ -32,6 +48,8 @@ export default Controller.extend({
         set(this, 'query', searchInput);
         set(this, 'type', 'channels');
         set(this, 'offset', 0);
+      } else {
+        alert('Please give me something to search for!');
       }
     },
 

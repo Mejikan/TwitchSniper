@@ -2,9 +2,15 @@
   <img class='wallpaper' src='/wallpaper.jpg' alt=''>
   <div class='sniper-cont'>
     <div class='search'>
-      {{input type='search' enter='inputSearchQuery' value=searchInput placeholder='Search Query...'}}
-      <button class='searchStreams' {{action 'searchStreams'}}>Search Streams</button>
-      <button class='searchChannels' {{action 'searchChannels'}}>Search Channels</button>
+      {{input class='searchInput' type='search' enter='inputSearchQuery' value=searchInput placeholder='Search Query...'}}
+      <div class='resultsPerPage'>
+        <label>Results per page: </label>
+        {{input class='resultsPerPageInput' type='number' value=resultsPerPageInput}}
+      </div>
+      <div>
+        <button class='searchStreams' {{action 'searchStreams'}}>Search Streams</button>
+        <button class='searchChannels' {{action 'searchChannels'}}>Search Channels</button>
+      </div>
     </div>
     <div class='results'>
 
