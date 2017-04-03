@@ -1,0 +1,34 @@
+{{#if (is-no-results results.total.total)}}
+  <div class='searchWarning'>
+    <p>
+      <strong>No Results Found.</strong>
+      <br>
+      <span>Please try a different search.</span>
+    </p>
+  </div>
+{{else}}
+
+  <!-- streams -->
+  {{#if (is-type-streams type)}}
+    {{#each results.streams as |stream|}}
+      <a href={{stream.channel.url}}>
+        {{stream-result streamName=stream.channel.status displayName=stream.channel.display_name createdDate=stream.created_at
+          imageURL=stream.preview.large gameName=stream.game viewers=stream.viewers}}
+      </a>
+    {{/each}}
+
+
+  <!-- channels -->
+  {{else}}
+    {{#if (is-type-channels type)}}
+      {{#each results.channels as |channel|}}
+        <a href={{channel.url}}>
+          {{channel-result displayName=channel.display_name name=channel.name imageURL=channel.logo followers=channel.followers
+            views=channel.views language=channel.language}}
+        </a>
+      {{/each}}
+    {{/if}}
+
+  {{/if}}
+
+{{/if}}

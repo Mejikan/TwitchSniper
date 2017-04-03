@@ -1,0 +1,24 @@
+<main>
+  <img class='wallpaper' src='/wallpaper.jpg' alt=''>
+  <div class='sniper-cont'>
+    <div class='search'>
+      {{input type='search' enter='inputSearchQuery' value=searchInput placeholder='Search Query...'}}
+      <button class='searchStreams' {{action 'searchStreams'}}>Search Streams</button>
+      <button class='searchChannels' {{action 'searchChannels'}}>Search Channels</button>
+    </div>
+    <div class='results'>
+
+      <div class='results-nav'>
+        <strong class='totalResults'>Total results: {{results.total.total}}</strong>
+        <span class='pagination'>
+          <button {{action 'prevPage'}}>{{fa-icon "chevron-left"}}</button>
+          <label class='page'>{{currentPage}} / {{calc-total-pages limit results.total.total}}</label>
+          <button {{action 'nextPage' results.total.total }}>{{fa-icon "chevron-right"}}</button>
+        </span>
+      </div>
+
+      {{results-list results=results type=type}}
+
+    </div>
+  </div>
+</main>
