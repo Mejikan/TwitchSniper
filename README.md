@@ -7,7 +7,7 @@ An EmberJS web application that interacts with the Twitch API.
 
 You can quickly run this application:
 * Download the contents of `/dist` directory.
-* Within the directory, run `$ node main.js` in your command line.
+* Within the directory, run `$ node main.js` in your command line, `$ sudo node main.js` in Linux.
 * Application should serve at [http://localhost:80](http://localhost:80).
 
 Run this application with Ember's provided server:
@@ -24,11 +24,10 @@ Run this application with Ember's provided server:
 * Search Twitch for streams/channels
 * Control the results per page and navigate using pagination
 * Go to stream/channel page by clicking on result
-* Responsive, for the most part, without relying on any CSS frameworks like Bootstrap
-* Simple and clean
+* Responsive and clean, for the most part, without relying on any CSS frameworks like Bootstrap
 
 This application was built using:
-* EmberJS
+* EmberJS 2.12.0
 * SASS
 * Ember Font Awesome Add-on (for the two pagination icons)
 
