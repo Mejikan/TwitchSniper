@@ -30,8 +30,3 @@ This application was built using:
 * [EmberJS 2.12.0](https://emberjs.com/)
 * [SASS](http://sass-lang.com/)
 * [Ember Font Awesome Addon](https://www.npmjs.com/package/ember-font-awesome) (for the two pagination icons)
-
-### Anecdote
-Originally, I had planned to use ReactJS as my main framework and jQuery for interactions with the Twitch API.
-Instead, I used any free time I had between studies to learn EmberJS. I admit that while I still need some practice
-with Ember, especially with its unique data handling, I believe that I'll be proficient with it by the start of the summer.
